@@ -1,0 +1,16 @@
+dry-run: false
+
+commit-message: "Add backstage configuration file"
+
+repo:
+  - 'hmcts/rpe-pdf-service'
+  - 'hmcts/cnp-plum-frontend'
+  - 'hmcts/cnp-plum-recipes-service'
+  - 'hmcts/cnp-plum-shared-infrastructure'
+  - 'hmcts/draft-store'
+  - 'hmcts/service-auth-provider-app'
+  - 'hmcts/camunda-bpm'
+  - 'hmcts/camunda-shared-infrastructure'
+
+reviewers:
+  - '@hmcts/platform-operations'
