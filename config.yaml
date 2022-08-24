@@ -179,7 +179,6 @@ repo:
   - 'hmcts/lau-frontend'
   - 'hmcts/lau-idam-backend'
   - 'hmcts/lau-shared-infrastructure'
-  - 'hmcts/louisehuyton-nodejs-demo'
   - 'hmcts/nfdiv-case-api'
   - 'hmcts/nfdiv-ccd-e2e-tests'
   - 'hmcts/nfdiv-frontend'
