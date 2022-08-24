@@ -46,6 +46,7 @@ then
 fi
 
 SLACK_CHANNEL=$(yq '.[env(PRODUCT)].slack.contact_channel' /tmp/team-config.yml)
+SLACK_CHANNEL_WITHOUT_HASH=$(yq '.[env(PRODUCT)].slack.contact_channel | sub("#", "")' /tmp/team-config.yml)
 
 OWNER=$(yq '.[env(PRODUCT)].azure_ad_group | downcase | sub(" ", "_")' /tmp/team-config.yml)
 
@@ -61,7 +62,7 @@ metadata:
   tags:
     - ${LANGUAGE}
   links:
-    - url: https://hmcts-reform.slack.com/app_redirect?channel=platops-help
+    - url: https://hmcts-reform.slack.com/app_redirect?channel=${SLACK_CHANNEL_WITHOUT_HASH}
       title: "${SLACK_CHANNEL} on Slack"
       icon: chat
 spec:
@@ -69,5 +70,7 @@ spec:
   lifecycle: production
   owner: $OWNER
 EOF
+
+sleep 10
 
 #cat catalog-info.yaml
